@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+
+.idea/
+.vscode/
+desktop.ini
+
+*.bak
+*.mdf
+*.ldf
+
+# Local database/export artifacts
+/SematecLearningManagementSystem
+/GeneratedCertificates/

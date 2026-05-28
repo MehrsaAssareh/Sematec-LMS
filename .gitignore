@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+desktop.ini
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+
+*.bak
+*.mdf
+*.ldf
+
