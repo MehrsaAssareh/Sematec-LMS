@@ -134,9 +134,9 @@ class StudentCourseCertificatePdfGenerator:
         draw.line((left_x - 170, y + 78, left_x + 170, y + 78), fill='#333333', width=2)
         draw.line((right_x - 170, y + 78, right_x + 170, y + 78), fill='#333333', width=2)
 
-        self.draw_centered_text(draw, 'Arezoo Qoreishi', left_x, y + 94, self.font(25, bold=True), self.TEXT)
+        self.draw_centered_text(draw, 'Training Department', left_x, y + 94, self.font(25, bold=True), self.TEXT)
         self.draw_centered_text(draw, 'Training Manager', left_x, y + 130, self.font(24), self.TEXT)
-        self.draw_centered_text(draw, 'Yashar Ghalandaran', right_x, y + 94, self.font(25, bold=True), self.TEXT)
+        self.draw_centered_text(draw, 'Sematec Management', right_x, y + 94, self.font(25, bold=True), self.TEXT)
         self.draw_centered_text(draw, 'CEO', right_x, y + 130, self.font(24), self.TEXT)
 
     def draw_student_photo(self, draw, image, photo_content, box):
