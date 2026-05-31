@@ -111,11 +111,3 @@ class MainFrame(Frame):
             self.administration_button.grid()
         else:
             self.administration_button.grid_remove()
-
-    # if user.is_admin == 1:
-    #     self.user_management_button = Button(self, text="User Management",bootstyle=OUTLINE+PRIMARY, command=self.show_user_management)
-    #     self.user_management_button.grid(row=2, column=0, pady=(0, 10), padx=10, sticky="ew")
-
-    # def show_user_management(self):
-    #     user_management_frame = self.main_view.switch("user_management")
-    #     user_management_frame.set_current_user(self.current_user)

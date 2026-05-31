@@ -1,5 +1,4 @@
 import pyodbc
-
 from DataAccessLayer.DatabaseConfig import CONNECTION_STRING as DB_CONNECTION_STRING
 
 

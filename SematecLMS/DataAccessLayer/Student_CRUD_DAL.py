@@ -1,5 +1,4 @@
 import pyodbc
-
 from DataAccessLayer.DatabaseConfig import CONNECTION_STRING as DB_CONNECTION_STRING
 from DataAccessLayer.PersonLookup_DAL import PersonLookup_DAL_Class
 from DataAccessLayer.PersonPhoto_DAL import PersonPhoto_DAL_Class

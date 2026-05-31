@@ -21,4 +21,3 @@ class Login_CRUD_BLL_Class:
             is_admin=user_row.isAdmin,
             is_active=user_row.isActive
         )
-

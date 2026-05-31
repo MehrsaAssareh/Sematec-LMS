@@ -16,7 +16,7 @@ class RECT(ctypes.Structure):
 
 class window(Window):
     def __init__(self, size="500x300"):
-        super().__init__(title="SEMATEC CRUD Application", themename="solar")
+        super().__init__(title="Sematec Learning Management System", themename="solar")
 
         self.apply_app_icon()
         self.resizable(False, False)

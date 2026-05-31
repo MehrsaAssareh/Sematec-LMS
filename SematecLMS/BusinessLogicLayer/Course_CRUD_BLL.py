@@ -62,6 +62,3 @@ class Course_CRUD_BLL_Class:
 
         if len(course_object.course_name) > 50:
             raise ValueError('Course Name must be 50 characters or fewer.')
-
-        if len(course_object.syllabus) > 2000:
-            raise ValueError('Syllabus must be 2000 characters or fewer.')

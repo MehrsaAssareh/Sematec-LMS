@@ -1,10 +1,8 @@
 from datetime import datetime
-
 from ttkbootstrap import Frame, Label, Entry, Button, OUTLINE, WARNING, PRIMARY, INFO, SUCCESS, DANGER, SECONDARY, \
     DateEntry, Combobox
 from tkinter import messagebox as msg, StringVar, HORIZONTAL, scrolledtext
 from tkinter.ttk import Labelframe, Treeview, Scrollbar
-
 from BusinessLogicLayer.CourseSchedule_CRUD_BLL import CourseSchedule_CRUD_BLL_Class
 from Model.CourseScheduleModel import CourseSchedule_Model_Class
 from .FormLayout import apply_form_field_layout, apply_readonly_value_style

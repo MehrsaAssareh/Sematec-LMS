@@ -44,11 +44,14 @@ class Employee_CRUD_DAL_Class:
             cursor = connection.cursor()
             cursor.execute(command_text, (employee_object.firstname, employee_object.lastname,
                                           self.to_db_date(employee_object.birthdate), employee_object.marital_status,
-                                          employee_object.national_code, employee_object.mobile, employee_object.address,
-                                          employee_object.gender, employee_object.email_address, employee_object.education_id,
+                                          employee_object.national_code, employee_object.mobile,
+                                          employee_object.address,
+                                          employee_object.gender, employee_object.email_address,
+                                          employee_object.education_id,
                                           employee_object.total_children, self.to_db_date(employee_object.start_date),
                                           employee_object.insurance_number, employee_object.account_number,
-                                          self.to_db_date(employee_object.hire_date), employee_object.department_id, employee_object.job_id))
+                                          self.to_db_date(employee_object.hire_date), employee_object.department_id,
+                                          employee_object.job_id))
             result_row = cursor.fetchone()
             if result_row:
                 self.photo_dal.apply_photo_change(cursor, result_row.PersonID, employee_object)
@@ -169,13 +172,15 @@ class Employee_CRUD_DAL_Class:
         """
         with pyodbc.connect(self.CONNECTION_STRING) as connection:
             cursor = connection.cursor()
-            cursor.execute(command_text, (employee_object.person_id, employee_object.firstname, employee_object.lastname,
-                                          self.to_db_date(employee_object.birthdate), employee_object.marital_status,
-                                          employee_object.national_code, employee_object.mobile, employee_object.address,
-                                          employee_object.gender, employee_object.email_address, employee_object.education_id,
-                                          employee_object.total_children, self.to_db_date(employee_object.start_date),
-                                          employee_object.insurance_number, employee_object.account_number,
-                                          self.to_db_date(employee_object.hire_date), employee_object.department_id, employee_object.job_id))
+            cursor.execute(command_text,
+                           (employee_object.person_id, employee_object.firstname, employee_object.lastname,
+                            self.to_db_date(employee_object.birthdate), employee_object.marital_status,
+                            employee_object.national_code, employee_object.mobile, employee_object.address,
+                            employee_object.gender, employee_object.email_address, employee_object.education_id,
+                            employee_object.total_children, self.to_db_date(employee_object.start_date),
+                            employee_object.insurance_number, employee_object.account_number,
+                            self.to_db_date(employee_object.hire_date), employee_object.department_id,
+                            employee_object.job_id))
             self.photo_dal.apply_photo_change(cursor, employee_object.person_id, employee_object)
             connection.commit()
 

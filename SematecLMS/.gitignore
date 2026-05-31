@@ -16,3 +16,5 @@ desktop.ini
 # Local database/export artifacts
 /SematecLearningManagementSystem
 /GeneratedCertificates/
+/build/
+/dist/

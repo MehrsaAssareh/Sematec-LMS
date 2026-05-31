@@ -1,5 +1,5 @@
 from ttkbootstrap import Frame, Label, Entry, Button, OUTLINE, WARNING, PRIMARY, INFO, SUCCESS, DANGER, SECONDARY, \
-    Radiobutton, DateEntry, IntVar, Scrollbar, Combobox
+    Radiobutton, DateEntry, IntVar, Combobox
 from tkinter import messagebox as msg, StringVar, HORIZONTAL
 from tkinter.ttk import Labelframe, Treeview, Scrollbar
 from datetime import datetime
@@ -85,14 +85,12 @@ class EmployeeFrame(Frame):
         lbl_firstname = Label(self.employee_info, text='Firstname: ')
         lbl_firstname.grid(row=0, column=0, padx=10, pady=10, sticky='w')
         self.txt_firstname = StringVar()
-        # txt_firstname.trace('w', check_firstname)
         ent_firstname = Entry(self.employee_info, textvariable=self.txt_firstname, width=32)
         ent_firstname.grid(row=0, column=1, padx=10, pady=10, sticky='w')
 
         lbl_lastname = Label(self.employee_info, text='Lastname: ')
         lbl_lastname.grid(row=0, column=2, padx=10, pady=6, sticky='w')
         self.txt_lastname = StringVar()
-        #         txt_lastname.trace('w', check_lastname)
         ent_lastname = Entry(self.employee_info, textvariable=self.txt_lastname, width=32)
         ent_lastname.grid(row=0, column=3, padx=10, pady=6, sticky='w')
 
@@ -104,7 +102,6 @@ class EmployeeFrame(Frame):
         lbl_national_code = Label(self.employee_info, text='National ID: ')
         lbl_national_code.grid(row=1, column=2, padx=10, pady=6, sticky='w')
         self.txt_national_code = StringVar()
-        #         txt_national_code.trace('w', check_national_code)
         ent_national_code = Entry(self.employee_info, textvariable=self.txt_national_code, width=32)
         ent_national_code.grid(row=1, column=3, padx=10, pady=6, sticky='w')
 
@@ -139,21 +136,18 @@ class EmployeeFrame(Frame):
         lbl_mobile = Label(self.employee_info, text='Mobile No.: ')
         lbl_mobile.grid(row=3, column=2, padx=10, pady=6, sticky='w')
         self.txt_mobile = StringVar()
-        #         txt_mobile.trace('w', check_mobile)
         ent_mobile = Entry(self.employee_info, textvariable=self.txt_mobile, width=32)
         ent_mobile.grid(row=3, column=3, padx=10, pady=6, sticky='w')
 
         lbl_email_address = Label(self.employee_info, text='Email Address: ')
         lbl_email_address.grid(row=4, column=0, padx=10, pady=6, sticky='w')
         self.txt_email_address = StringVar()
-        #         txt_email_address.trace('w', check_email_address)
         ent_email_address = Entry(self.employee_info, textvariable=self.txt_email_address, width=32)
         ent_email_address.grid(row=4, column=1, padx=10, pady=6, sticky='w')
 
         lbl_address = Label(self.employee_info, text='Address: ')
         lbl_address.grid(row=4, column=2, padx=10, pady=6, sticky='w')
         self.txt_address = StringVar()
-        #         txt_address.trace('w', check_address)
         ent_address = Entry(self.employee_info, textvariable=self.txt_address, width=32)
         ent_address.grid(row=4, column=3, padx=10, pady=6, sticky='w')
 
@@ -188,14 +182,12 @@ class EmployeeFrame(Frame):
         lbl_insurance_number = Label(self.employee_info, text='Insurance No.: ')
         lbl_insurance_number.grid(row=7, column=2, padx=10, pady=6, sticky='w')
         self.txt_insurance_number = StringVar()
-        # txt_insurance_number.trace('w', check_insurance_number)
         ent_insurance_number = Entry(self.employee_info, textvariable=self.txt_insurance_number, width=32)
         ent_insurance_number.grid(row=7, column=3, padx=10, pady=6, sticky='w')
 
         lbl_account_number = Label(self.employee_info, text='Account No.: ')
         lbl_account_number.grid(row=8, column=0, padx=10, pady=6, sticky='w')
         self.txt_account_number = StringVar()
-        # txt_account_number.trace('w', check_account_number)
         ent_account_number = Entry(self.employee_info, textvariable=self.txt_account_number, width=32)
         ent_account_number.grid(row=8, column=1, padx=10, pady=6, sticky='w')
 

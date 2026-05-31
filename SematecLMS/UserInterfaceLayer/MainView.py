@@ -1,5 +1,4 @@
 from tkinter import messagebox as msg
-
 from .Window import window
 
 

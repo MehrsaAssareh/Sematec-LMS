@@ -1,7 +1,6 @@
 import pyodbc
 import uuid
 from datetime import date, datetime
-
 from DataAccessLayer.DatabaseConfig import CONNECTION_STRING as DB_CONNECTION_STRING
 from Model.CourseRegistrationModel import CourseRegistration_Model_class
 

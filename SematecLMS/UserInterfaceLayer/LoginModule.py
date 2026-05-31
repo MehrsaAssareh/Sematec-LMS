@@ -25,7 +25,7 @@ class LoginFrame(Frame):
 
         self.welcome_header = Label(
             self.login_form,
-            text="Welcome to Sematec CRUD Application!",
+            text="Welcome to Sematec Learning Management System!",
             style=SUCCESS,
             font=('Arial', 16, 'bold')
         )
@@ -109,6 +109,3 @@ class LoginFrame(Frame):
             return
 
         self.btn_show_hide.configure(text='Hide' if is_password_visible else 'Show', image='')
-
-    # def show_register_frame(self):
-    #     self.main_view.switch("register")

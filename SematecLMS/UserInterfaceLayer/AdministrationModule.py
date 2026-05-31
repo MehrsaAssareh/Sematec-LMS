@@ -1,5 +1,5 @@
 from ttkbootstrap import Frame, Label, Entry, Button, OUTLINE, WARNING, PRIMARY, INFO, DANGER, SECONDARY, Radiobutton, \
-    IntVar, Scrollbar, Combobox, SUCCESS
+    IntVar, Combobox, SUCCESS
 from tkinter import messagebox as msg, StringVar, HORIZONTAL
 from tkinter.ttk import Labelframe, Treeview, Scrollbar, Checkbutton
 from BusinessLogicLayer.Admin_CRUD_BLL import Admin_CRUD_BLL_Class
@@ -30,11 +30,6 @@ class AdministrationFrame(Frame):
 
         self.header = Label(self, text="Administration Page", style=PRIMARY, font=('Arial', 15, 'bold'))
         self.header.grid(row=0, column=0, padx=10, pady=10, sticky="w")
-
-        # self.administration_page = Labelframe(self, text="Administration Page", style=PRIMARY)
-        # self.administration_page.grid(row=0, column=0, padx=10, pady=10, sticky="nswe", columnspan=2, rowspan=2)
-        # self.administration_page.grid_columnconfigure(0, weight=1)
-        # self.administration_page.grid_rowconfigure(0, weight=1)
 
         self.administration_info = Labelframe(self, text="Administration Information",
                                               style=SUCCESS)
@@ -68,7 +63,8 @@ class AdministrationFrame(Frame):
         self.person_selection_frame.grid_columnconfigure(1, weight=1)
         self.person_selection_frame.grid_columnconfigure(3, weight=1)
 
-        lbl_person = Label(self.person_selection_frame, text='Existing Person : ', style=INFO, font=('Arial', 10, 'bold'))
+        lbl_person = Label(self.person_selection_frame, text='Existing Person : ', style=INFO,
+                           font=('Arial', 10, 'bold'))
         lbl_person.grid(row=0, column=0, padx=8, pady=6, sticky='w')
 
         self.txt_person = StringVar()

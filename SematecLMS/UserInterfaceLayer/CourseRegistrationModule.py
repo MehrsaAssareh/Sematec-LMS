@@ -1,4 +1,5 @@
 import os
+import sys
 from ttkbootstrap import Frame, Label, Entry, Button, OUTLINE, WARNING, PRIMARY, INFO, SUCCESS, DANGER, SECONDARY, \
     Combobox
 from tkinter import filedialog, messagebox as msg, StringVar, HORIZONTAL
@@ -120,7 +121,11 @@ class CourseRegistrationFrame(Frame):
 
         certificate_button = Button(self.course_registration_info, text='Make Certificate PDF', bootstyle=PRIMARY,
                                     command=self.make_certificate)
-        certificate_button.grid(row=4, column=2, columnspan=2, padx=10, pady=12, sticky='ew')
+        certificate_button.grid(row=4, column=2, padx=10, pady=12, sticky='ew')
+
+        show_certificate_button = Button(self.course_registration_info, text='Show Certificate PDF',
+                                         bootstyle=OUTLINE + INFO, command=self.show_certificate)
+        show_certificate_button.grid(row=4, column=3, padx=10, pady=12, sticky='ew')
 
         search_button = Button(self.course_registration_info, text='Search', bootstyle=OUTLINE + SUCCESS,
                                command=self.search)
@@ -261,6 +266,22 @@ class CourseRegistrationFrame(Frame):
         except Exception as error:
             msg.showerror('Make Certificate Failed', str(error))
 
+    def show_certificate(self):
+        try:
+            certificate_data = self.course_registration_bll.get_student_course_certificate_pdf_data(
+                self.selected_registration_key
+            )
+            output_path = os.path.join(
+                self.get_certificate_pdf_default_folder(),
+                build_default_certificate_filename(certificate_data)
+            )
+            saved_path = StudentCourseCertificatePdfGenerator().create_pdf(certificate_data, output_path)
+            self.open_certificate_pdf(saved_path)
+        except ValueError as error:
+            msg.showwarning('Show Certificate', str(error))
+        except Exception as error:
+            msg.showerror('Show Certificate Failed', str(error))
+
     def open_certificate_pdf(self, file_path):
         try:
             os.startfile(file_path)
@@ -268,8 +289,12 @@ class CourseRegistrationFrame(Frame):
             pass
 
     def get_certificate_pdf_default_folder(self):
-        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-        output_folder = os.path.join(project_root, 'GeneratedCertificates')
+        if getattr(sys, 'frozen', False):
+            app_root = os.path.dirname(sys.executable)
+        else:
+            app_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+        output_folder = os.path.join(app_root, 'GeneratedCertificates')
         os.makedirs(output_folder, exist_ok=True)
         return output_folder
 

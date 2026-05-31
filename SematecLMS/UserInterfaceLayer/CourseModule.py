@@ -2,7 +2,6 @@ from ttkbootstrap import Frame, Label, Entry, Button, OUTLINE, WARNING, PRIMARY,
     IntVar, Combobox, SUCCESS
 from tkinter import messagebox as msg, StringVar, HORIZONTAL, scrolledtext
 from tkinter.ttk import Labelframe, Treeview, Scrollbar
-
 from BusinessLogicLayer.Course_CRUD_BLL import Course_CRUD_BLL_Class
 from Model.CourseModel import Course_Model_Class
 from .FormLayout import apply_form_field_layout, apply_readonly_value_style

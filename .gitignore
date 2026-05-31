@@ -13,3 +13,7 @@ venv/
 *.mdf
 *.ldf
 
+SematecLMS/build/
+SematecLMS/dist/
+SematecLMS/GeneratedCertificates/
+SematecLMS/SematecLearningManagementSystem
