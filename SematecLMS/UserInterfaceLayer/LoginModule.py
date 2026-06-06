@@ -11,8 +11,10 @@ class LoginFrame(Frame):
 
         self.main_view = main_view
         self.login_bll = Login_CRUD_BLL_Class()
+        self.login_logo_image = None
         self.password_show_icon = None
         self.password_hide_icon = None
+        self.load_login_logo()
         self.load_password_toggle_icons()
 
         self.grid_columnconfigure(0, weight=1)
@@ -23,12 +25,15 @@ class LoginFrame(Frame):
         self.login_form.grid_columnconfigure(1, weight=1)
         self.login_form.grid_columnconfigure(2, weight=0)
 
-        self.welcome_header = Label(
-            self.login_form,
-            text="Welcome to Sematec Learning Management System!",
-            style=SUCCESS,
-            font=('Arial', 16, 'bold')
-        )
+        if self.login_logo_image:
+            self.welcome_header = Label(self.login_form, image=self.login_logo_image)
+        else:
+            self.welcome_header = Label(
+                self.login_form,
+                text="Sematec Learning Management System",
+                style=SUCCESS,
+                font=('Arial', 16, 'bold')
+            )
         self.welcome_header.grid(row=0, column=0, columnspan=3, pady=(0, 8))
 
         self.header = Label(self.login_form, text="Login Page", style=PRIMARY, font=('Arial', 15, 'bold'))
@@ -90,6 +95,14 @@ class LoginFrame(Frame):
         else:
             self.ent_password.config(show='*')
             self.set_password_toggle_button(is_password_visible=False)
+
+    def load_login_logo(self):
+        logo_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', 'images', 'SematecLoginLogo.png')
+        )
+
+        if os.path.exists(logo_path):
+            self.login_logo_image = PhotoImage(file=logo_path)
 
     def load_password_toggle_icons(self):
         icon_folder = os.path.abspath(

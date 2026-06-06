@@ -354,13 +354,8 @@ INSERT INTO [dbo].[Certification] ([ID], [CertificationTitle], [Vendor], [Create
 SET IDENTITY_INSERT [dbo].[Certification] OFF;
 GO
 
--- [dbo].[Course] (4 rows)
+-- [dbo].[Course] (3 rows)
 SET IDENTITY_INSERT [dbo].[Course] ON;
-SET IDENTITY_INSERT [dbo].[Course] OFF;
-GO
-
--- [dbo].[CourseCategory] (8 rows)
-SET IDENTITY_INSERT [dbo].[CourseCategory] ON;
 INSERT INTO [dbo].[Course] ([ID], [CourseCode], [CourseName], [Duration], [Syllabus], [Cost], [Status], [CourseCategoryID], [PrerequisiteCourseID], [CreatedAt], [UpdatedAt]) VALUES (3, 1, N'Data Science', 140, CAST(N'Introduction of Data Science =>
 • SQL Server
 • Introduction to Microsoft SQL Server 2019
@@ -576,6 +571,11 @@ Advanced Libraries =>
 • Operating System Management with os
 • Working with data: array, decimal, fraction
 • Testing: doctest and unittest' AS nvarchar(MAX)), 8000000, N'Active', 9, 10, N'2026-05-26 08:14:48', N'2026-05-28 06:49:01');
+SET IDENTITY_INSERT [dbo].[Course] OFF;
+GO
+
+-- [dbo].[CourseCategory] (8 rows)
+SET IDENTITY_INSERT [dbo].[CourseCategory] ON;
 INSERT INTO [dbo].[CourseCategory] ([ID], [CourseCategoryName], [CreatedAt], [UpdatedAt]) VALUES (1, N'Data', N'2026-05-20 02:49:16', N'2026-05-20 02:49:16');
 INSERT INTO [dbo].[CourseCategory] ([ID], [CourseCategoryName], [CreatedAt], [UpdatedAt]) VALUES (2, N'Network & Security', N'2026-05-20 02:49:16', N'2026-05-20 02:49:16');
 INSERT INTO [dbo].[CourseCategory] ([ID], [CourseCategoryName], [CreatedAt], [UpdatedAt]) VALUES (3, N'Database', N'2026-05-20 02:49:16', N'2026-05-20 02:49:16');
