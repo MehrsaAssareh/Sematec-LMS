@@ -1,6 +1,6 @@
 -- Sematec LMS final database script
 -- Generated from the live SematecLearningManagementSystem database on 2026-05-27.
--- This is the clean baseline script; use it instead of old historical migration scripts.
+-- This is the clean baseline script for creating the current app database.
 -- Warning: when run against an existing database, it drops and recreates the app objects below.
 
 IF DB_ID(N'SematecLearningManagementSystem') IS NULL

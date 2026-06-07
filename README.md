@@ -17,7 +17,7 @@ Sematec LMS is a Python desktop CRUD application for managing people, employees,
 - `SematecLMS/DataAccessLayer`: SQL Server data access
 - `SematecLMS/Model`: data models
 - `SematecLMS/UserInterfaceLayer`: desktop UI pages
-- `SematecLMS/DatabaseScripts`: database setup and migration scripts
+- `SematecLMS/DatabaseScripts`: database setup script
 - `SematecLMS/images`: app icon and UI image assets
 
 ## Setup
